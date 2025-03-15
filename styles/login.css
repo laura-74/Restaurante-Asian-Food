@@ -1,0 +1,91 @@
+:root {
+    --dm-serif: 'DM Serif Display';
+    --piedra-serif: "Piedra", serif;
+    --color-black: #333;
+    --color-white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'DM Serif Display', serif;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    background-color: #FFFAF2;
+}
+
+
+.header_h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    font-size: 6rem;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+.section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: rgb(27, 27, 27);
+    margin: 2rem;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.divForm{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+p {
+font-size: 4rem;
+color: var(--color-white);
+}
+
+.label{
+font-size: 2rem;
+color: var(--color-white);
+}
+
+.input{
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.divButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+.button{
+    font-family: var(--dm-serif);
+    padding: 0.5rem;
+    font-size: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: #FFFAF2;
+    color: black;
+    cursor: pointer;
+}

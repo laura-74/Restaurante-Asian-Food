@@ -1,0 +1,696 @@
+:root {
+    --dm-serif: 'DM Serif Display';
+    --piedra-serif: "Piedra", serif;
+    --color-black: #333;
+    --color-white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'DM Serif Display', serif;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    background-color: #FFFAF2;
+}
+
+/********************* header ************************/
+
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+/****************** nav ****************/
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.nav h2 {
+    font-size: 4rem;
+    font-family: 'DM Serif Display';
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    overflow-y: hidden;
+    z-index: 20;
+    /* Ensure the menu is above the overlay */
+}
+
+.menu a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: black;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-family: 'DM Serif Display';
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 30;
+    /* Ensure the toggle button is above the menu and overlay */
+}
+
+.menu.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    z-index: 20;
+}
+
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+/******************************** banner ****************************/
+.banner {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 2rem;
+    margin: 1rem;
+    border-radius: 1rem;
+
+}
+
+.banner_imagen {
+width: 65%;
+
+}
+
+.banner_imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.banner_texto{
+    background-color:  #FFFAF2;
+    border-radius: 1rem;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem;
+
+}
+
+.banner h1 {
+    font-size: 5rem;
+    font-family: 'DM Serif Display';
+    color:  rgb(156, 25, 25);
+    font-weight: bold;
+}
+
+
+.banner p {
+    font-size: 4rem;
+    font-family: 'DM Serif Display';
+    color: black;
+
+}
+
+/*    color: rgb(156, 25, 25);*/
+.banner button {
+    font-size: 2rem;
+    font-family: 'DM Serif Display';
+    background-color: white;
+    color: black;
+    padding: 1rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+/**************************************** MAIN **********************************/
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/****************** Seccion de cheff *************************/
+.chef {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.tituloChef {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.infoChef {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.tituloChef h2 {
+    font-size: 4rem;
+    font-family: 'DM Serif Display';
+}
+
+.tituloChef p {
+    font-size: 3rem;
+    font-family: 'DM Serif Display';
+}
+
+.chef1 {
+    background-color: #333;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* Ensure images do not overflow the container */
+    transition: transform 0.3s ease;
+    gap: 0.2rem;
+}
+
+
+.chef1 img {
+    width: 100%;
+    height: 28rem;
+    object-fit: cover;
+}
+
+.chef1 h3 {
+    color: white;
+    font-size: 2.5rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.chef1 p {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+
+    padding: 0 0.5rem 2rem 0.5rem;
+}
+
+/**********************Platos del dia **********************/
+.platos {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.platos h2 {
+    font-size: 4rem;
+    font-family: 'DM Serif Display';
+    text-align: center;
+}
+
+.platos__seccion {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.plato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* Ensure images do not overflow the container */
+    transition: transform 0.3s ease;
+}
+
+.plato img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+}
+
+.plato h3 {
+    font-size: 2.5rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.plato p {
+    font-size: 2rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+/************************** Testimonios ***************************/
+
+.tituloTestimonios {
+    font-size: 2rem;
+    font-family: 'DM Serif Display';
+    text-align: center;
+    padding: 2rem;
+}
+
+.testimonios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+    gap: 1rem;
+    font-size: 1.5rem;
+    
+}
+
+.testimonio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+/****************************************** CONTACTO ******************************************/
+.contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.tituloContacto {
+    font-size: 2rem;
+    font-family: 'DM Serif Display';
+    text-align: center;
+    padding: 1rem;
+}
+.parrafoContacto {
+    font-size: 2rem;
+    font-family: 'DM Serif Display';
+    text-align: center;
+}
+.label {
+    font-size: 2rem;
+    font-family: 'DM Serif Display';
+}
+.input, .textarea {
+    font-size: 1rem;
+    font-family: 'DM Serif Display';
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.divForm{
+    display: flex;
+    flex-direction: column;
+}
+.bottonForm{
+color : white;
+background-color: black;
+border-radius: 1rem;
+border: none;
+font-family: var(--dm-serif);
+font-size: 2rem;
+padding: 0.5rem;
+}
+
+/****************************************** FOOTER ******************************************/
+.footer {
+    display: flex;
+    flex-direction: column;
+
+    padding: 2rem;
+    background: linear-gradient(to right, #232526, #414345);
+    color: white;
+    font-size: 1.5rem;
+}
+
+
+/********* Footer info *******/
+.footerInfo {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.footer h4 {
+    font-size: 4rem;
+    font-family: 'DM Serif Display';
+}
+
+
+.horarios {
+    padding: 1rem;
+}
+
+/************** Contacto **************/
+.contacto {
+    padding: 1rem;
+}
+
+/************ Redes sociales ************/
+.redes {
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.redes div {
+    display: flex;
+    
+    align-items: center;
+}
+
+/********** Derechos *********/
+.derechos {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+
+    padding: 1rem;
+    color: white;
+    font-size: 1.5rem;
+}
+
+
+
+
+
+
+/********************************** MEDIA QUERIES ************************************/
+
+@media (max-width: 1200px) {
+    .nav h2 {
+        font-size: 3rem;
+    }
+
+    .menu a {
+        font-size: 1.5rem;
+    }
+
+    .banner h1 {
+        font-size: 4rem;
+    }
+
+    .banner p {
+        font-size: 3rem;
+    }
+
+    .banner button {
+        font-size: 1.5rem;
+    }
+
+    .tituloChef h2 {
+        font-size: 3rem;
+    }
+
+    .tituloChef p {
+        font-size: 2.5rem;
+    }
+
+    .chef1 h3 {
+        font-size: 2rem;
+    }
+
+    .chef1 p {
+        font-size: 1.5rem;
+    }
+
+    .platos h2 {
+        font-size: 3rem;
+    }
+
+    .platos__seccion {
+        grid-template-columns: 1fr;
+    }
+
+    .plato h3 {
+        font-size: 2rem;
+    }
+
+    .plato p {
+        font-size: 1.5rem;
+    }
+
+    .tituloTestimonios {
+        font-size: 1.5rem;
+    }
+
+    .testimonios {
+        grid-template-columns: 1fr;
+    }
+
+    .footer h4 {
+        font-size: 3rem;
+    }
+
+    .redes div {
+        gap: 0.5rem;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .nav h2 {
+        font-size: 2.5rem;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 1rem;
+        display: none;
+    }
+
+    .menu a {
+        font-size: 1.2rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .banner h1 {
+        font-size: 3rem;
+    }
+
+    .banner p {
+        font-size: 2rem;
+    }
+
+    .banner button {
+        font-size: 1.2rem;
+    }
+
+    /************ Chef *************/
+
+    .tituloChef {
+        text-align: center;
+    }
+
+    .infoChef {
+        flex-direction: column;
+        gap: 2rem;
+
+        align-items: center;
+    }
+
+    .tituloChef h2 {
+        font-size: 2.5rem;
+    }
+
+    .tituloChef p {
+        font-size: 2rem;
+    }
+
+    .chef1 h3 {
+        font-size: 1.8rem;
+    }
+
+    .chef1 p {
+        font-size: 1.2rem;
+    }
+
+    .platos h2 {
+        font-size: 2.5rem;
+    }
+
+    .plato h3 {
+        font-size: 1.8rem;
+    }
+
+    .plato p {
+        font-size: 1.2rem;
+    }
+
+    .tituloTestimonios {
+        font-size: 1.2rem;
+    }
+
+    .footer {
+        text-align: center;
+    }
+
+    .footer h4 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        padding: 1rem;
+        align-items: center;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 2rem;
+        color: black;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .nav h2 {
+        font-size: 2rem;
+    }
+
+    .menu a {
+        font-size: 1rem;
+    }
+
+    .banner {
+        align-items: center;
+        text-align: center;
+    }
+
+    .banner h1 {
+        font-size: 3.5rem;
+    }
+
+    .banner p {
+        font-size: 3rem;
+        font-weight: bold;
+        color: rgb(156, 25, 25);
+        background: none;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+    }
+
+    .banner button {
+        font-size: 1rem;
+    }
+
+    .tituloChef h2 {
+        font-size: 2rem;
+    }
+
+    .tituloChef p {
+        font-size: 1.5rem;
+    }
+
+
+    .chef {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+
+
+    .chef1 h3 {
+        font-size: 1.5rem;
+    }
+
+    .chef1 p {
+        font-size: 1rem;
+    }
+
+    .platos h2 {
+        font-size: 2rem;
+    }
+
+    .plato h3 {
+        font-size: 1.5rem;
+    }
+
+    .plato p {
+        font-size: 1rem;
+    }
+
+    .tituloTestimonios {
+        font-size: 1rem;
+    }
+
+    .footer h4 {
+        font-size: 2rem;
+    }
+
+    .footerInfo {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
