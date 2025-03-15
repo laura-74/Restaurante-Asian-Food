@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <table class="table" border="1">
                 <div class="tituloBoton">
                     <p class="tituloSecciones">Sección Banners</p>
-                    <button type="button" class="Agregar" onclick="location.href='/seccion/banner/crear.php?tipo=banner'">
+                    <button type="button" class="Agregar" onclick="location.href='/admin/modelo/crear.php?tipo=banner'">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M11 11V7h2v4h4v2h-4v4h-2v-4H7v-2zm1 11C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10m0-2a8 8 0 1 0 0-16a8 8 0 0 0 0 16" />
                         </svg>
@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <td><img src="<?php echo $banner["imagenUrl"]; ?>" alt=""> </td>
                         <td>
                             <div class="divAcciones">
-                                <button type="button" class="editar" onclick="location.href='/seccion/banner/editar.php?tipo=banner&id=<?php echo $banner['id']; ?>'">
+                                <button type="button" class="editar" onclick="location.href='/admin/modelo/editar.php?tipo=banner&id=<?php echo $banner['id']; ?>'">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
                                         <path
                                             d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"></path>
@@ -122,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <table class="table" border="1">
                 <div class="tituloBoton">
                     <p class="tituloSecciones">Sección chef </p>
-                    <button type="button" class="Agregar" onclick="location.href='/seccion/banner/crear.php?tipo=chefs'">
+                    <button type="button" class="Agregar" onclick="location.href='/admin/modelo/crear.php?tipo=chefs'">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M11 11V7h2v4h4v2h-4v4h-2v-4H7v-2zm1 11C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10m0-2a8 8 0 1 0 0-16a8 8 0 0 0 0 16" />
                         </svg>
@@ -144,7 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <td><img src="<?php echo $chef["imagenUrl"]; ?>" alt=""> </td>
                         <td>
                             <div class="divAcciones">
-                                <button type="button" class="editar" onclick="location.href='/seccion/banner/editar.php?tipo=chef&id=<?php echo $chef['id']; ?>'">  
+                                <button type="button" class="editar" onclick="location.href='/admin/modelo/editar.php?tipo=chef&id=<?php echo $chef['id']; ?>'">  
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
                                         <path
                                             d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"></path>
@@ -179,7 +179,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <table class="table" border="1">
                 <div class="tituloBoton">
                     <p class="tituloSecciones">Sección platos</p>
-                    <button type="button" class="Agregar" onclick="location.href='/seccion/banner/crear.php?tipo=platos'">
+                    <button type="button" class="Agregar" onclick="location.href='/admin/modelo/crear.php?tipo=platos'">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M11 11V7h2v4h4v2h-4v4h-2v-4H7v-2zm1 11C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10m0-2a8 8 0 1 0 0-16a8 8 0 0 0 0 16" />
                         </svg>
@@ -203,7 +203,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <td><img src="<?php echo $plato["imagenUrl"]; ?>" alt=""> </td>
                         <td>
                         <div class="divAcciones">
-                                <button type="button" class="editar" onclick="location.href='/seccion/banner/editar.php?tipo=plato&id=<?php echo $plato['id']; ?>'">
+                                <button type="button" class="editar" onclick="location.href='/admin/modelo/editar.php?tipo=plato&id=<?php echo $plato['id']; ?>'">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
                                         <path
                                             d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"></path>
@@ -238,7 +238,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <table class="table" border="1">
                 <div class="tituloBoton">
                     <p class="tituloSecciones">Sección testimonios</p>
-                    <button type="button" class="Agregar" onclick="location.href='/seccion/banner/crear.php?tipo=testimonios'">
+                    <button type="button" class="Agregar" onclick="location.href='/admin/modelo/crear.php?tipo=testimonios'">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M11 11V7h2v4h4v2h-4v4h-2v-4H7v-2zm1 11C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10m0-2a8 8 0 1 0 0-16a8 8 0 0 0 0 16" />
                         </svg>
@@ -258,7 +258,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <td><?php echo $testimonio["opinion"]; ?></td>
                         <td>
                         <div class="divAcciones">
-                                <button type="button" class="editar" onclick="location.href='/seccion/banner/editar.php?tipo=testimonios&id=<?php echo $testimonio['id']; ?>'">
+                                <button type="button" class="editar" onclick="location.href='/admin/modelo/editar.php?tipo=testimonios&id=<?php echo $testimonio['id']; ?>'">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
                                         <path
                                             d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"></path>

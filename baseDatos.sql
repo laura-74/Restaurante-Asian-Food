@@ -40,3 +40,12 @@ nombreUsuario VARCHAR(255) NOT NULL,
 passwordUsuario VARCHAR(255) NOT NULL,
 correo VARCHAR(255) NOT NULL
 );
+
+
+CREATE TABLE sugerencias (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(255) NOT NULL,
+    correo VARCHAR(255) NOT NULL,
+    telefono VARCHAR(20) NOT NULL,
+    mensaje VARCHAR(1000) NOT NULL
+);

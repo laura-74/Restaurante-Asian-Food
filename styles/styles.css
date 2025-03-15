@@ -184,7 +184,8 @@ width: 65%;
 }
 
 .infoChef {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
     padding: 1rem;
 }
@@ -204,19 +205,19 @@ width: 65%;
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     /* Ensure images do not overflow the container */
-    transition: transform 0.3s ease;
     gap: 0.2rem;
+    object-fit: cover;
+
 }
 
 
 .chef1 img {
     width: 100%;
-    height: 28rem;
+    height: 20rem;
     object-fit: cover;
 }
 
@@ -299,16 +300,17 @@ width: 65%;
 .testimonios {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 2rem;
-    gap: 1rem;
+    padding: 1rem;
     font-size: 1.5rem;
-    
-}
+    background-color: #ffe8c4;
+    border-radius: 1rem;
+    }
 
 .testimonio {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 
 }
 /****************************************** CONTACTO ******************************************/

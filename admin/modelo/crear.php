@@ -4,9 +4,8 @@ $db = new Database();
 
 // Obtener el tipo de entidad y el ID desde la URL
 $tipo = $_GET['tipo'] ?? null;
-$id = $_GET['id'] ?? null;
 
-if (!$tipo || !$id) {
+if (!$tipo) {
     // Redirigir si no se proporcionan los parámetros necesarios
     header("Location: /admin/admin.php");
     exit();
@@ -20,11 +19,11 @@ switch ($tipo) {
         $tabla = 'banners';
         $campos = ['titulo', 'descripcion', 'imagenUrl'];
         break;
-    case 'chef':
+    case 'chefs':
         $tabla = 'chefs';
         $campos = ['nombre', 'descripcion', 'imagenUrl'];
         break;
-    case 'plato':
+    case 'platos':
         $tabla = 'platos';
         $campos = ['nombre', 'descripcion', 'precio', 'imagenUrl'];
         break;
@@ -40,7 +39,6 @@ switch ($tipo) {
 }
 
 // Leer los datos de la base de datos
-$registro = $db->read($tabla, ["id" => $id])[0];
 
 // Procesar la actualización si se envía el formulario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -49,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $datos[$campo] = $_POST[$campo];
     }
 
-    $db->update($tabla, $datos, ["id" => $id]);
+    $db->create($tabla, $datos);
 
     // Redirigir de vuelta a la página de administración
     header("Location: /admin/admin.php");
@@ -65,6 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar <?php echo ucfirst($tipo); ?></title>
     <link rel="stylesheet" href="/styles/bannerCrear.css">
+    <link rel="shortcut icon" href="/images/icon.jpg" type="image/x-icon" />
+
 
 </head>
 
@@ -74,19 +74,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </header>
     <main class="main">
         <section class="section">
-            <form method="post">
-                <div class="divForm">
-                    <p class="parrafoForm">Editar <?php echo ucfirst($tipo); ?></p>
-                </div>
+
+            <form class="form" method="post">
+            <div class="divForm">
+            <p class="parrafoForm">Crear <?php echo ucfirst($tipo); ?></p>
+            </div>
                 <?php foreach ($campos as $campo): ?>
                     <div class="divForm">
-                    <label class="label" for="<?php echo $campo; ?>"><?php echo ucfirst($campo); ?>:</label>
-                    <input class="input" type="text" id="<?php echo $campo; ?>" name="<?php echo $campo; ?>" value="<?php echo $registro[$campo]; ?>" required>
-                    <br>
+                        <label class="label" for="<?php echo $campo; ?>"><?php echo ucfirst($campo); ?>:</label>
+                        <input class="input" type="text" id="<?php echo $campo; ?>" name="<?php echo $campo; ?>" value="" required>
+                        <br>
                     </div>
                 <?php endforeach; ?>
                 <div class="divButton">
-                    <button class="button" type="submit">Guardar</button>
+                    <button class="button" type="submit">Crear</button>
                     <button class="button" type="submit" onclick="window.location.href='/admin/admin.php'">Cancelar</button>
                 </div>
             </form>

@@ -5,7 +5,6 @@ $banners = $db->read("banners");
 $chefs = $db->read("chefs");
 $platos = $db->read("platos");
 $testimonios = $db->read("testimonios");
-
 ?>
 
 
@@ -33,7 +32,7 @@ $testimonios = $db->read("testimonios");
         <a href="#platos">Platos</a>
         <a href="#testimonio">Testimonios</a>
         <a href="#contacto">Contacto</a>
-        <a href="/seccion/usuarios/login.php">Login</a>
+        <a href="/login.php">Login</a>
       </div>
       <div class="menu-toggle">☰</div>
     </nav>
@@ -58,13 +57,11 @@ $testimonios = $db->read("testimonios");
     <!-- Seccion de chef -->
     <section class="chef" id="chef">
       <div class="tituloChef">
-        <h2>Bienvenido a Asian Food</h2>
-        <p>Los mejores platos de la ciudad</p>
+        <h2>Los mejores chefs</h2>
       </div>
 
       <div class="infoChef">
         <?php foreach ($chefs as $chef) { ?>
-
           <div class="chef1">
             <img src="<?php echo $chef['imagenUrl']; ?>" alt="" loading="lazy" />
             <h3><?php echo $chef['nombre']; ?></h3>
@@ -104,13 +101,13 @@ $testimonios = $db->read("testimonios");
         </div>
       <?php } ?>
     </section>
-    <!---------------------- Seccion de testimonios --------------------------->
+    <!---------------------- Seccion de contacto --------------------------->
     <section id="contacto" class="contacto">
       <div class="tituloContacto">
         <h2>Contacto</h2>
       </div>
       <p class="parrafoContacto">Para cualquier consulta o pedido, no dudes en contactarnos</p>
-      <form class="form" action="?" method="post">
+      <form class="form" action="/funcion.php" method="post">
         <div class="divForm">
           <label for="" class="label">Nombre:</label>
           <input type="text" class="input" id="nombre" name="nombre" placeholder="Ingrese su nombre">
