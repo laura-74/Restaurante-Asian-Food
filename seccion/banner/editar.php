@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                 <?php endforeach; ?>
                 <div class="divButton">
-                    <button class="button" type="submit">Crear</button>
+                    <button class="button" type="submit">Guardar</button>
                     <button class="button" type="submit" onclick="window.location.href='/admin/admin.php'">Cancelar</button>
                 </div>
             </form>
