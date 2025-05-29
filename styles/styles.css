@@ -59,11 +59,11 @@ body {
 }
 
 .menu-toggle {
-    display: none;
+    padding: 0;
+    margin: 0;
     font-size: 2rem;
     cursor: pointer;
-    z-index: 30;
-    /* Ensure the toggle button is above the menu and overlay */
+    border-radius: 2px solid red;
 }
 
 .menu.active {
@@ -421,11 +421,6 @@ padding: 0.5rem;
     font-size: 1.5rem;
 }
 
-
-
-
-
-
 /********************************** MEDIA QUERIES ************************************/
 
 @media (max-width: 1200px) {
@@ -695,4 +690,71 @@ padding: 0.5rem;
         flex-direction: column;
         gap: 1rem;
     }
+}
+
+/* Sidebar styles */
+.sidebar-menu {
+  position: fixed;
+  top: 0;
+  right: -320px; /* Cambiado de left a right */; /* Cambiado de left a right */
+  width: 300px;
+  height: 100%;
+  background: #222;
+  color: #fff;
+  z-index: 2000;
+  transition: right 0.3s; /* Cambiado de left a right */ /* Cambiado de left a right */
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  padding-top: 0;
+}
+.sidebar-menu.open {
+  right: 0; /* Cambiado de left a right */; /* Cambiado de left a right */
+}
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #111;
+  font-size: 3rem;
+  border-bottom: 1px solid #333;
+}
+.close-sidebar {
+  cursor: pointer;
+  font-size: 2rem;
+}
+.sidebar-nav ul {
+  list-style: none;
+  padding-left: 2rem;
+}
+.sidebar-nav li {
+  margin: 0.5rem 0;
+}
+.sidebar-nav li > ul {
+  margin-left: 1rem;
+}
+.sidebar-nav .submenu {
+  display: none;
+  margin-left: 1rem;
+}
+.sidebar-nav .menu-category.open > .submenu {
+  display: block;
+}
+.menu-label {
+  cursor: pointer;
+  user-select: none;
+}
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1000;
+}
+.menu-overlay.active {
+  display: block;
+}
+
+span{
+    font-size: 1.5rem;
 }

@@ -8,7 +8,7 @@ $db = new Database();
 // Leer registros
 $banners = $db->read("banners");
 $chefs = $db->read("chefs");
-$platos = $db->read("platos");
+$platos = $db->read("plato");
 $testimonios = $db->read("testimonios");
 
 
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST["id"];
-    $db->delete("platos", ["id" => $id]);
+    $db->delete("plato", ["id" => $id]);
     header("Location: /admin/admin.php");
 }
 
@@ -179,7 +179,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <table class="table" border="1">
                 <div class="tituloBoton">
                     <p class="tituloSecciones">Sección platos</p>
-                    <button type="button" class="Agregar" onclick="location.href='/admin/modelo/crear.php?tipo=platos'">
+                    <button type="button" class="Agregar" onclick="location.href='/admin/modelo/crear.php?tipo=plato'">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M11 11V7h2v4h4v2h-4v4h-2v-4H7v-2zm1 11C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10m0-2a8 8 0 1 0 0-16a8 8 0 0 0 0 16" />
                         </svg>
@@ -188,7 +188,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <thead>
                     <th><strong>Nombre</strong></th>
-                    <th><strong>Descripción</strong></th>
                     <th><strong>Precio</strong></th>
                     <th><strong>Imagen</strong></th>
                     <th><strong>Acciones</strong></th>
@@ -198,9 +197,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <?php foreach ($platos as $plato) { ?>
                     <tr>
                         <td><?php echo $plato["nombre"]; ?></td>
-                        <td><?php echo $plato["descripcion"]; ?></td>
                         <td><?php echo $plato["precio"]; ?></td>
-                        <td><img src="<?php echo $plato["imagenUrl"]; ?>" alt=""> </td>
+                        <td><img src="<?php echo $plato["foto"]; ?>" alt=""> </td>
                         <td>
                         <div class="divAcciones">
                                 <button type="button" class="editar" onclick="location.href='/admin/modelo/editar.php?tipo=plato&id=<?php echo $plato['id']; ?>'">

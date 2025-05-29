@@ -2,8 +2,12 @@
 require_once "../../conexion.php";
 $db = new Database();
 
+$platos = $db->read("plato");
+
 // Obtener el tipo de entidad y el ID desde la URL
 $tipo = $_GET['tipo'] ?? null;
+
+
 
 if (!$tipo) {
     // Redirigir si no se proporcionan los parámetros necesarios
@@ -23,9 +27,9 @@ switch ($tipo) {
         $tabla = 'chefs';
         $campos = ['nombre', 'descripcion', 'imagenUrl'];
         break;
-    case 'platos':
-        $tabla = 'platos';
-        $campos = ['nombre', 'descripcion', 'precio', 'imagenUrl'];
+    case 'plato':
+        $tabla = 'plato';
+        $campos = ['nombre', 'precio', 'foto', 'menu_id'];
         break;
     case 'testimonios':
         $tabla = 'testimonios';

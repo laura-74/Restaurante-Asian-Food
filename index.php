@@ -1,13 +1,14 @@
 <?php
 require_once "conexion.php";
+require_once "menu.php"; // Asegúrate de incluir el archivo del menú
 $db = new Database();
 $banners = $db->read("banners");
 $chefs = $db->read("chefs");
-$platos = $db->read("platos");
+$platos = $db->read("plato");
 $testimonios = $db->read("testimonios");
 ?>
 
-
+  
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +23,20 @@ $testimonios = $db->read("testimonios");
 </head>
 
 <body>
+  <!-- Sidebar -->
+  <aside id="sidebar-menu" class="sidebar-menu">
+    <div class="sidebar-header">
+      <span>Menú</span>
+      <span id="close-sidebar" class="close-sidebar">&times;</span>
+    </div>
+    <nav class="sidebar-nav">
+      <?php
+        foreach ($menuRoot->children as $menuNode) {
+          echo renderMenu($menuNode);
+        }
+      ?>
+    </nav>
+  </aside>
   <!----------------------------- Header ------------------------->
   <header class="header">
     <nav class="nav">
@@ -34,7 +49,7 @@ $testimonios = $db->read("testimonios");
         <a href="#contacto">Contacto</a>
         <a href="/login.php">Login</a>
       </div>
-      <div class="menu-toggle">☰</div>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
     </nav>
 
     <!-- Seccion de banner -->
@@ -77,9 +92,8 @@ $testimonios = $db->read("testimonios");
       <div class="platos__seccion">
         <?php foreach ($platos as $plato) { ?>
           <div class="plato">
-            <img src="<?php echo $plato['imagenUrl']; ?>" alt="" loading="lazy" />
+            <img src="<?php echo $plato['foto']; ?>" alt="" loading="lazy" />
             <h3><?php echo $plato['nombre']; ?></h3>
-            <p><?php echo $plato['descripcion']; ?></p>
             <p><?php echo $plato['precio']; ?></p>
           </div>
         <?php } ?>

@@ -12,6 +12,8 @@ if (!$tipo || !$id) {
     exit();
 }
 
+
+
 // Determinar la tabla y los campos según el tipo
 $tabla = '';
 $campos = [];
@@ -25,8 +27,8 @@ switch ($tipo) {
         $campos = ['nombre', 'descripcion', 'imagenUrl'];
         break;
     case 'plato':
-        $tabla = 'platos';
-        $campos = ['nombre', 'descripcion', 'precio', 'imagenUrl'];
+        $tabla = 'plato';
+        $campos = ['nombre','precio', 'foto','menu_id'];
         break;
     case 'testimonios':
         $tabla = 'testimonios';
