@@ -2,7 +2,7 @@
 require_once "../../conexion.php";
 $db = new Database();
 
-$platos = $db->read("plato");
+$platos = $db->read("menu");
 
 // Obtener el tipo de entidad y el ID desde la URL
 $tipo = $_GET['tipo'] ?? null;
@@ -86,7 +86,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <?php foreach ($campos as $campo): ?>
                     <div class="divForm">
                         <label class="label" for="<?php echo $campo; ?>"><?php echo ucfirst($campo); ?>:</label>
-                        <input class="input" type="text" id="<?php echo $campo; ?>" name="<?php echo $campo; ?>" value="" required>
+                        <?php if ($campo == 'menu_id'): ?>
+                            <select class="input" id="menu_id" name="menu_id" required>
+                                <option value="">Seleccione un menú</option>
+                                <?php foreach ($platos as $menu): ?>
+                                    <option value="<?php echo $menu['id']; ?>"><?php echo htmlspecialchars($menu['nombre']); ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        <?php else: ?>
+                            <input class="input" type="text" id="<?php echo $campo; ?>" name="<?php echo $campo; ?>" value="" required>
+                        <?php endif; ?>
                         <br>
                     </div>
                 <?php endforeach; ?>

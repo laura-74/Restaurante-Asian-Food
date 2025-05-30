@@ -57,6 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Location: /admin/admin.php");
     exit();
 }
+$platos = $db->read("menu");
 ?>
 
 <!DOCTYPE html>

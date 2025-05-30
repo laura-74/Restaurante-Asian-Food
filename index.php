@@ -6,6 +6,7 @@ $banners = $db->read("banners");
 $chefs = $db->read("chefs");
 $platos = $db->read("plato");
 $testimonios = $db->read("testimonios");
+require_once "algoritmo.php";
 ?>
 
   
@@ -205,7 +206,11 @@ $testimonios = $db->read("testimonios");
     </section>
   </footer>
   <div class="menu-overlay"></div>
-  <script src="/js/app.js"></script>
+      <script>
+  // Lista de platos ordenada alfabéticamente desde PHP (usando algoritmo.php)
+  const platosLista = <?php echo json_encode($nombrePlatosOrdenados); ?>;
+</script>
+<script src="/js/app.js"></script>
 </body>
 
 </html>

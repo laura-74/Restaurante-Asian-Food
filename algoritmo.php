@@ -3,8 +3,8 @@
 require_once('conexion.php');
 $db = new Database();
 
-$plastos = $db->read('plato');
-$nombrePlatos = array_column($plastos, 'nombre');
+$platos = $db->read('plato');
+$nombrePlatos = array_column($platos, 'nombre');
 
 
 
@@ -27,7 +27,36 @@ function burbuja(array $array): array
 
 $nombrePlatosOrdenados = burbuja($nombrePlatos);
 
-echo "Platos ordenados\n";
-print_r($nombrePlatosOrdenados);
+
+function autocompletar($lista, $query) {
+    $resultados = [];
+    $inicio = 0;
+    $fin = count($lista) - 1;
+    $query = strtolower($query);
+
+    // Buscar el primer índice que podría coincidir
+    while ($inicio <= $fin) {
+        $medio = intval(($inicio + $fin) / 2);
+        if (strpos(strtolower($lista[$medio]), $query) === 0) {
+            // Buscar hacia atrás para encontrar el primer match
+            $i = $medio;
+            while ($i >= 0 && strpos(strtolower($lista[$i]), $query) === 0) {
+                $i--;
+            }
+            $i++;
+            // Agregar todos los matches consecutivos
+            while ($i < count($lista) && strpos(strtolower($lista[$i]), $query) === 0) {
+                $resultados[] = $lista[$i];
+                $i++;
+            }
+            break;
+        } elseif (strtolower($lista[$medio]) < $query) {
+            $inicio = $medio + 1;
+        } else {
+            $fin = $medio - 1;
+        }
+    }
+    return $resultados;
+}
 
 ?>
