@@ -30,3 +30,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const search = document.getElementById('search');
+
+  
+
+});

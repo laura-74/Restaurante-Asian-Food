@@ -48,6 +48,7 @@ $testimonios = $db->read("testimonios");
         <a href="#testimonio">Testimonios</a>
         <a href="#contacto">Contacto</a>
         <a href="/login.php">Login</a>
+        <input type="text" class="search" id="search" placeholder=" Buscar plato..." />
       </div>
       <div class="menu-toggle" id="menu-toggle">☰</div>
     </nav>
